@@ -17,7 +17,7 @@ function Header() {
     const navLinks = navigation.map((nav,index)=>{
         return(
             <div className='hover:text-neutral-50'>
-                <NavLink to={nav.link}>{nav.label}</NavLink>
+                <NavLink key={nav.label} to={nav.link}>{nav.label}</NavLink>
             </div>
             
         )})
