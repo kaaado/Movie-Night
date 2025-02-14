@@ -13,6 +13,14 @@ function Header() {
             link:'movie'
         }
     ]
+
+    const navLinks = navigation.map((nav,index)=>{
+        return(
+            <div className='hover:text-neutral-50'>
+                <NavLink to={nav.link}>{nav.label}</NavLink>
+            </div>
+            
+        )})
   return (
     <header className='fixed top-0 w-full h-16 bg-neutral-600 bg-opacity-70'>
         <div className='container mx-auto px-2 flex items-center h-full'>
@@ -22,15 +30,7 @@ function Header() {
                 </Link>
             </div>
             <nav className='flex items-center gap-2 ml-5 '>
-                {
-                    navigation.map((nav,index)=>{
-                    return(
-                        <div className='hover:text-neutral-50'>
-                            <NavLink to={nav.link}>{nav.label}</NavLink>
-                        </div>
-                        
-                    )})
-                }
+                {navLinks}
             </nav>
         </div>
     </header>
