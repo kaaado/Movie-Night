@@ -55,3 +55,14 @@ VITE_TMDB_KEY='YOUR_API_KEY'
 npm run dev
 ```
 Then, open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+
+
+## 🛠 Technologies Used
+- **Vite** - [Vite Official Site](https://vitejs.dev/)
+- **Redux Toolkit** - [Redux Toolkit Docs](https://redux-toolkit.js.org/)
+- **Tailwind CSS** - [Tailwind Docs](https://tailwindcss.com/)
+- **React Router DOM** - [React Router](https://reactrouter.com/en/main)
+- **React Icons** - [React Icons Library](https://react-icons.github.io/react-icons/)
+- **Axios** - [Axios Package](https://www.npmjs.com/package/axios)
+- **Moment.js** - [Moment.js Docs](https://momentjs.com/)
+- **Node.js** - [Node.js Official Site](https://nodejs.org/en)
