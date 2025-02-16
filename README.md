@@ -12,4 +12,14 @@ Throughout this project, you will grasp fundamental and advanced React concepts,
 - Redux Toolkit integration
 - Custom Hooks for enhanced functionality
 
+---
 
+## 🚀 Features
+- 🎞️ Browse and search for movies from TMDb API
+- 📜 Detailed movie information with ratings, genres, and overviews
+- 🔄 State management with Redux Toolkit
+- 🎨 Fully responsive UI with Tailwind CSS
+- 🔄 Axios for API requests
+- 🕘 Display movie release dates using Moment.js
+- 🚦 Smooth page navigation with React Router DOM
+- 🌙 Dark Mode support (optional improvement)
