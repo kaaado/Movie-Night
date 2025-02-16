@@ -12,7 +12,6 @@ Throughout this project, you will grasp fundamental and advanced React concepts,
 - Redux Toolkit integration
 - Custom Hooks for enhanced functionality
 
----
 
 ## 🚀 Features
 - 🎞️ Browse and search for movies from TMDb API
