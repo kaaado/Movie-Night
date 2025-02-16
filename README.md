@@ -74,4 +74,6 @@ Then, open [http://localhost:5173](http://localhost:5173) to view it in the brow
 Feel free to fork this repository, submit pull requests, and enhance features. Any contribution is appreciated! 
 
 
+🚀 **Enjoy coding!** Feel free to modify, enhance, and customize as needed! 
 
+## this website is under progress
