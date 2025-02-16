@@ -58,6 +58,8 @@ Then, open [http://localhost:5173](http://localhost:5173) to view it in the brow
 
 
 ## 🛠 Technologies Used
+- **HTML5** - [Official HTML Docs (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- **CSS3** - [Official CSS Docs (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - **Vite** - [Vite Official Site](https://vitejs.dev/)
 - **Redux Toolkit** - [Redux Toolkit Docs](https://redux-toolkit.js.org/)
 - **Tailwind CSS** - [Tailwind Docs](https://tailwindcss.com/)
@@ -66,3 +68,4 @@ Then, open [http://localhost:5173](http://localhost:5173) to view it in the brow
 - **Axios** - [Axios Package](https://www.npmjs.com/package/axios)
 - **Moment.js** - [Moment.js Docs](https://momentjs.com/)
 - **Node.js** - [Node.js Official Site](https://nodejs.org/en)
+
