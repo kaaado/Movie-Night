@@ -28,10 +28,11 @@ function Header() {
 
     const navLinks = navigation.map((nav,index)=>{
         return(
-            <div>
-                <NavLink className={({isActive})=>`px-2 hover:text-neutral-100 ${isActive && "text-neutral-100"}`}
-                key={nav.index} 
-                to={nav.link}>{nav.label}</NavLink>
+            <div key={nav.index}>
+                <NavLink className={({isActive})=>`px-2 hover:text-neutral-100 ${isActive && "text-neutral-100"}`} 
+                    key={nav.label}
+                    to={nav.link}
+                >{nav.label}</NavLink>
             </div>
             
         )})
