@@ -1,13 +1,15 @@
-import { Outlet } from "react-router-dom";
+import {  Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
 import MobileNavigation from "./components/MobileNavigation";
+import CustomToaster from "./components/CustomToaster";
 import { useDispatch } from "react-redux";
 import { setBannerData } from "./store/movieoSlice";
 import { useQuery } from "@tanstack/react-query";
 import { Axios } from "./axios/Axios";
 import { useEffect } from "react";
+import toast from 'react-hot-toast';
 
 
 
@@ -32,10 +34,15 @@ function App() {
     }
   }, [data, dispatch]);
 
-  if (error) return ;
+  if (error){
+    toast.error('Failed for fetching data');
+    window.location.reload();
+  }
+
 
   return (
   <>
+  <CustomToaster />
     {isLoading ? <Loading/> :
       <main className="pb-14 lg:pb-0">
         <Header />

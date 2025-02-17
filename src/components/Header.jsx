@@ -15,7 +15,7 @@ function Header() {
             navigate(`/search?q=${query}`);
         }
        
-      }, 300), [navigate]);
+      }, 500), [navigate]);
 
       useEffect(() => {
         debouncedNavigate(searchInput);

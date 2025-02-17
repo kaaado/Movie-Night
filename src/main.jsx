@@ -19,11 +19,11 @@ const queryClient = new QueryClient({
 
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  //<StrictMode>
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
         <RouterProvider router={router} />
       </Provider>
     </QueryClientProvider>
-  </StrictMode>
+  //</StrictMode>
 );
