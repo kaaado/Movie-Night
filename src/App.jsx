@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Loading from "./components/Loading";
 import MobileNavigation from "./components/MobileNavigation";
 import { useDispatch } from "react-redux";
 import { setBannerData } from "./store/movieoSlice";
@@ -28,22 +29,23 @@ function App() {
   useEffect(() => {
     if (data) {
       dispatch(setBannerData(data));
-      console.log(data)
     }
   }, [data, dispatch]);
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error loading trending data</div>;
+  if (error) return ;
 
   return (
+  <>
+    {isLoading ? <Loading/> :
       <main className="pb-14 lg:pb-0">
         <Header />
         <div className="pt-16">
-          <Outlet />
-        </div>
+         <Outlet />
+        </div> 
         <Footer />
         <MobileNavigation />
-      </main>
+      </main>}
+      </>
   );
 }
 
