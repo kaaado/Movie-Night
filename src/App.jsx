@@ -1,40 +1,50 @@
-import { Outlet } from "react-router-dom"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
-import MobileNavigation from "./components/MobileNavigation"
-import { useEffect } from "react"
-import { Axios } from "./axios/Axios"
-import { useDispatch } from "react-redux"
-import { setBannerData } from "./store/movieoSlice"
+import { Outlet } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import MobileNavigation from "./components/MobileNavigation";
+import { useDispatch } from "react-redux";
+import { setBannerData } from "./store/movieoSlice";
+import { useQuery } from "@tanstack/react-query";
+import { Axios } from "./axios/Axios";
+import { useEffect } from "react";
 
-function App() {  
-  const dispatch = useDispatch()
 
-  const fetchTrendingData=async()=>{
-    try {
-      await Axios.get('/trending/all/week')
-      .then(res=>{
-        dispatch(setBannerData);
-        console.log(res.data.results)
-      })
-    } catch (error) {
-      console.log('error ',error)
+
+const fetchTrendingData = async () => {
+  const { data } = await Axios.get("/trending/all/week");
+  return data.results;
+};
+
+function App() {
+  const dispatch = useDispatch();
+
+  
+  const { data, error, isLoading } = useQuery({
+    queryKey: ["trending"],
+    queryFn: fetchTrendingData,
+  });
+
+  
+  useEffect(() => {
+    if (data) {
+      dispatch(setBannerData(data));
+      console.log(data)
     }
-    
-  }
-  useEffect(()=>{
-    fetchTrendingData()
-  },[])
+  }, [data, dispatch]);
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error loading trending data</div>;
+
   return (
-    <main className="pb-14 lg:pb-0">
-        <Header/>
+      <main className="pb-14 lg:pb-0">
+        <Header />
         <div className="pt-16">
-          <Outlet/>
+          <Outlet />
         </div>
-        <Footer/>
-        <MobileNavigation/>
-    </main>
-  )
+        <Footer />
+        <MobileNavigation />
+      </main>
+  );
 }
 
-export default App
+export default App;
