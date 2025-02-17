@@ -3,7 +3,6 @@ import { PiTelevisionSimpleBold } from "react-icons/pi";
 import { BiSolidCameraMovie } from "react-icons/bi";
 import {IoSearchOutline} from 'react-icons/io5'
 
-console.log("hello ")
 export const navigation =[
     {
         label:'TV Shows',
