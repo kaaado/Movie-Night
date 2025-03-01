@@ -5,53 +5,39 @@ import Loading from "./components/Loading";
 import MobileNavigation from "./components/MobileNavigation";
 import CustomToaster from "./components/CustomToaster";
 import { useDispatch } from "react-redux";
-import { setBannerData } from "./store/movieoSlice";
-import { useQuery } from "@tanstack/react-query";
+import { setBannerData,setImageURL } from "./store/movieoSlice";
 import { Axios } from "./axios/Axios";
 import { useEffect } from "react";
 import toast from 'react-hot-toast';
 
 
-
-const fetchTrendingData = async () => {
-  const { data } = await Axios.get("/trending/all/week");
-  return data.results;
-};
-
 function App() {
   const dispatch = useDispatch();
 
-  
-  const { data, error, isLoading } = useQuery({
-    queryKey: ["trending"],
-    queryFn: fetchTrendingData,
-  });
+const fetchTrendingData = async()=>{
+		await Axios.get('/trending/all/week').then((res)=>dispatch(setBannerData(res.data.results))).catch((error)=>toast.error("Failed to fetch data"))
+}
 
-  
+const fetchConfiguration = async()=>{
+		await Axios.get('/configuration').then((res)=>dispatch(setImageURL(res.data.images.secure_base_url+"original"))).catch((error)=>toast.error("Failed to fetch data"))
+}
+
   useEffect(() => {
-    if (data) {
-      dispatch(setBannerData(data));
-    }
-  }, [data, dispatch]);
-
-  if (error){
-    toast.error('Failed for fetching data');
-    window.location.reload();
-  }
-
-
+    fetchTrendingData(); 
+    fetchConfiguration();
+  }, []);
   return (
   <>
   <CustomToaster />
-    {isLoading ? <Loading/> :
+  
       <main className="pb-14 lg:pb-0">
         <Header />
-        <div className="pt-16">
+        <div className="">
          <Outlet />
         </div> 
         <Footer />
         <MobileNavigation />
-      </main>}
+      </main>
       </>
   );
 }
