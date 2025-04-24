@@ -8,7 +8,7 @@ function MobileNavigation() {
     <NavLink 
       key={index}
       to={nav.link}
-      className={({isActive})=>`${isActive && "text-neutral-100 scale-120 bg-neutral-100 bg-opacity-10"} px-4 w-full rounded hover:text-white flex items-center justify-center flex-col h-full`}
+      className={({isActive})=>`${isActive && "text-neutral-100 scale-120 "} px-4 w-full rounded hover:text-white flex items-center justify-center flex-col h-full`}
     >
       <div className='text-2xl'>
         {nav.icon}
@@ -19,7 +19,7 @@ function MobileNavigation() {
     </NavLink>
   )
   return (
-    <section className='h-14 lg:hidden bg-neutral-500 bg-opacity-40 fixed bottom-0 w-full'>
+    <section className='h-14 lg:hidden bg-black bg-opacity-70 z-40 fixed bottom-0 w-full '>
         <div className='flex items-center justify-between h-full text-neutral-400'>
           {mobileNavShow}
         </div>

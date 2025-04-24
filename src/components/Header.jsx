@@ -28,7 +28,7 @@ function Header() {
 
     const navLinks = navigation.map((nav,index)=>{
         return(
-            <div key={nav.index}>
+            <div key={index}>
                 <NavLink className={({isActive})=>`px-2 hover:text-neutral-100 ${isActive && "text-neutral-100"}`} 
                     key={nav.label}
                     to={nav.link}
@@ -38,7 +38,7 @@ function Header() {
         )})
 
   return (
-    <header className='fixed top-0 w-full h-16 bg-neutral-600 bg-opacity-70 z-40'>
+    <header className='fixed top-0 w-full h-16 bg-black bg-opacity-70 z-40'>
         <div className='container mx-auto px-3 flex items-center h-full'>
             <div>
                 <Link to='/'>
@@ -48,8 +48,8 @@ function Header() {
             <nav className='hidden lg:flex items-center gap-2 ml-5 '>
                 {navLinks}
             </nav>
-            <div className="ml-auto flex items-center gap-5">
-                <form onSubmit={handleSubmit} className="flex items-center gap-3">
+            <div className=" ml-auto flex items-center gap-5">
+                <form onSubmit={handleSubmit} className="hidden lg:flex items-center gap-3">
                     <input
                          type="text"
                          name='search'

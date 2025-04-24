@@ -5,7 +5,7 @@ import {IoSearchOutline} from 'react-icons/io5'
 
 export const navigation =[
     {
-        label:'TV Shows',
+        label:'TV',
         link:'tv',
         icon:<PiTelevisionSimpleBold/>
     },

@@ -51,7 +51,7 @@ function BannerHome() {
     		{
     			bannerData.map((data,index)=>{
     				return(
-    					<div className="min-w-full min-h-[450px] lg:min-h-full overflow-hidden relative group transition-all ease-out" style={{transform:`translateX(-${currentImg * 100}%)`}}>
+    					<div key={index} className="min-w-full min-h-[450px] lg:min-h-full overflow-hidden relative group transition-all ease-out" style={{transform:`translateX(-${currentImg * 100}%)`}}>
     						<div className="w-full h-full">
     							<img src={imageURL+data.backdrop_path} className="w-full h-full object-cover" />
     						</div>

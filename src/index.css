@@ -13,7 +13,8 @@
 
 body {
   font-family: 'Nunito Sans', sans-serif;
-  @apply bg-neutral-900 text-neutral-300
+  scroll-behavior: smooth;
+  @apply bg-neutral-900 text-neutral-300 p-0 m-0
 }
 
 /*Search input Start*/
@@ -62,3 +63,4 @@ body {
   animation: custom-exit 1s ease-in-out forwards;
 }
 /* Toast Style End*/
+
